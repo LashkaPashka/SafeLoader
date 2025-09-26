@@ -1,0 +1,7 @@
+env: "local"
+storage_path: "./tasks/tasks.json"
+local_path_storage: "./storage/"
+http_server:
+  address: "0.0.0.0:8080"
+  timeout: 4s
+  idle_timeout: 30s
