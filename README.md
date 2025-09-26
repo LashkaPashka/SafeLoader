@@ -31,10 +31,11 @@ http_server:
 
 ## Запуск проекта
 
-Для запуска понадобится:
+Для запуска понадобится написать следующие команды в консоли:
 ```bash
 git clone https://github.com/LashkaPashka/SafeLoader.git
 cd SafeLoader
+export CONFIG="./config/local.yaml"
 go run cmd/taskdownloader/main.go
 ```
 
