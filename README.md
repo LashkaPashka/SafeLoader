@@ -28,7 +28,7 @@ http_server:
 POST /tasks
 
 Тело запроса (JSON):
-```
+```json
 {
   "urls": [
     "https://example.com/file1.jpg",
@@ -42,7 +42,7 @@ POST /tasks
 GET /tasks/{task_id}
 
 Пример ответа:
-```
+```json
 {
   "task_id": "task_1dsa3r",
   "status": "in_progress",
@@ -77,7 +77,7 @@ EventBus реализован через каналы (chan) для очеред
 
 
 ## Обработка сигналов ОС и остановка сервера
-```
+```go
 done := make(chan os.Signal, 1)
 signal.Notify(done, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
 
