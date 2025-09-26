@@ -29,6 +29,15 @@ http_server:
  5. http_server.timeout — таймаут чтения/записи HTTP-запроса
  6. http_server.idle_timeout — таймаут простоя соединения
 
+## Запуск проекта
+
+Для запуска понадобится:
+```bash
+git clone https://github.com/LashkaPashka/SafeLoader.git
+cd SafeLoader
+go run cmd/taskdownloader/main.go
+```
+
 ## URL-запросы (API)
 
 Создание новой задачи
