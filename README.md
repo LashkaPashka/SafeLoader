@@ -66,7 +66,7 @@ GET /tasks/{task_id}
 
 Для обработки задач используется паттерн EventBus.
 
-Реализация находится в lib/eventbus/eventbus.go.
+Реализация находится в `lib/eventbus/eventbus.go`.
 
 Когда пользователь создаёт задачу через handler, данные отправляются в EventBus как событие task.created.
 
