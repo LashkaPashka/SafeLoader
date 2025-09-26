@@ -28,7 +28,20 @@ func New(service Service, logger *slog.Logger) http.HandlerFunc {
 		json.NewEncoder(w).Encode(&payload.GetStatusOfTaskResponse{
 			ClientID: task.ClientID,
 			TaskID: task.ID,
+			Files: getFileResponse(task),
 			Status: task.Status,
 		})
 	}
+}
+
+func getFileResponse(task models.Task) (fileResponse []payload.StatusOfFileResponse) {
+	for _, file := range task.File {
+		fileResponse = append(fileResponse, payload.StatusOfFileResponse{
+			Filename: file.Filename,
+			Status: file.Status,
+			DownloadedBytes: file.DownloadedBytes,
+		})
+	}
+	
+	return fileResponse
 }

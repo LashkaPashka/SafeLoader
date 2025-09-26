@@ -10,7 +10,6 @@ import (
 	"time"
 
 	"github.com/LashkaPashka/TaskDownloader/internal/config"
-	getfile "github.com/LashkaPashka/TaskDownloader/internal/http-server/handlers/getFile"
 	gettask "github.com/LashkaPashka/TaskDownloader/internal/http-server/handlers/getTask"
 	savelisturls "github.com/LashkaPashka/TaskDownloader/internal/http-server/handlers/saveListUrls"
 	eventbus "github.com/LashkaPashka/TaskDownloader/internal/lib/eventBus"
@@ -67,7 +66,6 @@ func main() {
 	router.Route("/tasks", func(r chi.Router) {
 		r.Post("/", savelisturls.New(service, logger))
 		r.Get("/", gettask.New(service, logger))
-		r.Get("/", getfile.New(service, logger))
 	})
 
 	go service.CompleteTask()

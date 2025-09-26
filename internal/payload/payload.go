@@ -6,13 +6,14 @@ type SaveTaskRequest struct {
 }
 
 type GetStatusOfTaskResponse struct {
-	Status			string		`json:"status"`
-	TaskID			string		`json:"task_id"`				
-	ClientID		string		`json:"client_id"`
+	Files			[]StatusOfFileResponse	`json:"files"`
+	Status			string					`json:"status"`
+	TaskID			string					`json:"task_id"`				
+	ClientID		string					`json:"client_id"`
 }
 
-type GetStatusOfFileResponse struct {
-	Filename		string		`json:"filename"`
-	Url				string		`json:"url"`
-	Status 			string		`json:"status"`
+type StatusOfFileResponse struct {
+	DownloadedBytes		int64				`json:"downloadedBytes"`
+	Filename			string				`json:"filename"`
+	Status 				string				`json:"status"`
 }
