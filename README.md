@@ -30,11 +30,11 @@ POST /tasks
 Тело запроса (JSON):
 ```json
 {
-  "urls": [
-    "https://example.com/file1.jpg",
-    "https://example.com/file2.png"
-  ],
-  "client_id": "12345"
+	"urls": [
+    "https://echo.epa.gov/files/echodownloads/pipeline_caa_downloads.zip",
+    "https://echo.epa.gov/files/echodownloads/npdes_outfalls_layer.zip"
+	],
+	"client_id": "u_342fvr5"
 }
 ```
 
@@ -44,20 +44,21 @@ GET /tasks/{task_id}
 Пример ответа:
 ```json
 {
-  "task_id": "task_1dsa3r",
-  "status": "in_progress",
-  "files": [
-    {
-      "url": "https://example.com/file1.jpg",
-      "status": "done",
-      "downloaded_bytes": 800
-    },
-    {
-      "url": "https://example.com/file2.png",
-      "status": "in_progress",
-      "downloaded_bytes": 203
-    }
-  ]
+	"files": [
+		{
+			"downloadedBytes": 5650509,
+			"filename": "pipeline_caa_downloads.zip",
+			"status": "done"
+		},
+		{
+			"downloadedBytes": 52891687,
+			"filename": "npdes_outfalls_layer.zip",
+			"status": "done"
+		}
+	],
+	"status": "completed",
+	"task_id": "task_YQuKr2fRF0",
+	"client_id": "u_342fvr5"
 }
 ```
 
